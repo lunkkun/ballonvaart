@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Stage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/Brandon Bromley.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+stage_packed = ExtResource( 2 )
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+pause_mode = 2
+margin_right = 1364.0
+margin_bottom = 800.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverScreen" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.66
+margin_top = -74.2274
+margin_right = 151.34
+margin_bottom = 0.772583
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 0 )
+text = "Game over..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetButton" type="ToolButton" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -215.562
+margin_top = 12.7648
+margin_right = 215.438
+margin_bottom = 58.7648
+focus_mode = 0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 0 )
+custom_colors/font_color = Color( 0.678431, 0.678431, 0.678431, 0 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.317647, 0.317647, 0.317647, 1 )
+disabled = true
+enabled_focus_mode = 0
+text = "Klik hier om opnieuw te beginnen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="Control"]
+[connection signal="pressed" from="Control/ResetButton" to="." method="_on_ToolButton_pressed"]

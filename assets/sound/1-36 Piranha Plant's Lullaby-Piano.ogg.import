@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1-36 Piranha Plant's Lullaby-Piano.ogg-2ce78e5bc007683109dbaaf2f9af778d.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/1-36 Piranha Plant's Lullaby-Piano.ogg"
+dest_files=[ "res://.import/1-36 Piranha Plant's Lullaby-Piano.ogg-2ce78e5bc007683109dbaaf2f9af778d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

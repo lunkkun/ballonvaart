@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sound/437729__craigsmith__g02-06-biplane-flying-steady-trimmed.wav" type="AudioStream" id=1]
+[ext_resource path="res://assets/art/6-62153_driven-manufacturer-stampe-sv-plane-side-view-png.png-removebg-preview.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Plane.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 23.0434
+height = 102.897
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 8.46006
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 3.80111
+
+[node name="Plane" type="KinematicBody2D" groups=[
+"planes",
+]]
+position = Vector2( 1242.66, 94.5178 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.67041, -4.69214 )
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -54.7407, 25.6947 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 62.1141, 18.9917 )
+rotation = 1.5708
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -30.0
+autoplay = true
+
+[node name="VolumeTween" type="Tween" parent="."]

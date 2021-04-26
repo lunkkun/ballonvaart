@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/art/buildings/kisspng-norristown-architecture-cartoon-cartoon-building-5aa1257f691724.8869881615205103354305.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Building.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 53.3317, 45.8536 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 53.3317, 99.7399 )
+
+[node name="Building" type="StaticBody2D"]
+position = Vector2( 682, 650 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.855347, 52.5717 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -50.4651, 103.037 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 51.3202, 52.5718 )
+shape = SubResource( 2 )

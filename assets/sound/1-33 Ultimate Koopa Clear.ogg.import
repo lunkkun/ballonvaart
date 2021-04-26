@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1-33 Ultimate Koopa Clear.ogg-9a7ac5e1d01edff9c4454d3dafaedda8.oggstr"
+
+[deps]
+
+source_file="res://assets/sound/1-33 Ultimate Koopa Clear.ogg"
+dest_files=[ "res://.import/1-33 Ultimate Koopa Clear.ogg-9a7ac5e1d01edff9c4454d3dafaedda8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

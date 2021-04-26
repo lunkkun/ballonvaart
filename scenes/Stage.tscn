@@ -1,0 +1,452 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Balloon.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Annie.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/Brandon Bromley.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/fonts/aAlloyInk.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://scenes/Stage.gd" type="Script" id=6]
+[ext_resource path="res://assets/sound/1-09 Dire, Dire Docks.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sound/1-19 Correct Solution.wav" type="AudioStream" id=8]
+[ext_resource path="res://scenes/Plane.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/buildings/Building1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/buildings/Building2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/buildings/Building5.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/buildings/Building4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/buildings/Building3.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/sound/555246__hackerb9__gust-mono-trimmed.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/Flag.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/sound/1-33 Ultimate Koopa Clear.ogg" type="AudioStream" id=17]
+[ext_resource path="res://assets/sound/1-36 Piranha Plant's Lullaby-Piano.ogg" type="AudioStream" id=18]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1536, 48, 0, 0, 0, 0, 1536, 144 )
+}
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1536, 752, 0, 0, 0, 0, 1536, 696 )
+}
+
+[sub_resource type="Animation" id=5]
+length = 3.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Balloon/Annie:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1100, 25 ), Vector2( -119.109, -44.4278 ), Vector2( -111.539, -68.2934 ), Vector2( -99.2915, -94.818 ), Vector2( -83.7129, -111.182 ), Vector2( -53.2538, -115.552 ), Vector2( -23.699, -112.74 ), Vector2( -4.361, -100 ), Vector2( 3, -51 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balloon/Annie:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.5, 2.6, 2.7, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 15.0, -15.0, 15.0, -15.0, 15.0, -15.0, 15.0, -15.0, 0.0, 5.0, 10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Labels/InstructionLabelNode:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3, 3.6, 3.7, 3.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -760, 312 ), Vector2( -760, 312 ), Vector2( 42, 312 ), Vector2( 60, 312 ), Vector2( 42, 312 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Labels/TitleLabelNode:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15, -200 ), Vector2( 15, 12 ), Vector2( 15, 20 ), Vector2( 15, 12 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Background:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2096, -42 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Balloon:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1010, 730 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Balloon:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "landing"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1600, 140 ), Vector2( 1300, -180 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Balloon/Annie:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, -51 ), Vector2( 5.38098, -77.1906 ), Vector2( 7.7619, -105.762 ), Vector2( 41.0953, -115.286 ), Vector2( 74.4286, -115.286 ), Vector2( 93.4762, -103.381 ), Vector2( 114.905, -77.1906 ), Vector2( 131.572, -41.4762 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Labels/ClearLabelNode:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 10, 10.6, 10.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 736, -100 ), Vector2( 736, 46 ), Vector2( 736, 32 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Labels/EndingLabelNode:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 10.7, 11.4, 11.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1450, 176 ), Vector2( 724, 176 ), Vector2( 736, 176 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Labels/TitleLabelNode:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15, 12 ), Vector2( 15, 20 ), Vector2( 15, 12 ), Vector2( 15, -200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Labels/InstructionLabelNode:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 42, 312 ), Vector2( 60, 312 ), Vector2( 42, 312 ), Vector2( -720, 312 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Background:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 1.1, 1.4, 2, 4, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2096, -42 ), Vector2( 2096, -42 ), Vector2( 2096, 0 ), Vector2( 2090, 30 ), Vector2( 2040, 67.789 ), Vector2( 1800, 140 ), Vector2( 1600, 140 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Balloon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 1.4, 2, 2.7, 3.3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1010, 730 ), Vector2( 1010, 700 ), Vector2( 1010, 640 ), Vector2( 1000, 602 ), Vector2( 980, 612 ), Vector2( 940, 616.702 ), Vector2( 775, 570 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Balloon:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.42, 0.42 ) ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 64
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 76
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 42
+font_data = ExtResource( 4 )
+
+[node name="Stage" type="Node2D"]
+script = ExtResource( 6 )
+plane_packed = ExtResource( 9 )
+buildings_packed = [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ) ]
+flag_packed = ExtResource( 16 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2096, -42 )
+
+[node name="Balloon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1010, 730 )
+scale = Vector2( 1, 1 )
+can_burn = false
+can_move = false
+
+[node name="Annie" parent="Balloon" instance=ExtResource( 3 )]
+position = Vector2( -1100, 25 )
+rotation = 0.261799
+z_index = -1
+
+[node name="PlanePath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="PlaneSpawnLocation" type="PathFollow2D" parent="PlanePath"]
+position = Vector2( 1536, 48 )
+rotation = 1.5708
+
+[node name="BuildingPath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="BuildingSpawnLocation" type="PathFollow2D" parent="BuildingPath"]
+position = Vector2( 1536, 752 )
+rotation = -1.57083
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/intro = SubResource( 5 )
+anims/landing = SubResource( 6 )
+anims/liftoff = SubResource( 7 )
+
+[node name="LandingTween" type="Tween" parent="."]
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="TitleLabelNode" type="Node2D" parent="Labels"]
+position = Vector2( 15, -200 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="TitleLabel" type="Label" parent="Labels/TitleLabelNode"]
+margin_left = -4.0
+margin_top = 18.0
+margin_right = 651.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.156863, 0.196078, 0.756863, 1 )
+text = "Annie's"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel2" type="Label" parent="Labels/TitleLabelNode"]
+margin_left = -4.0
+margin_top = 104.0
+margin_right = 651.0
+margin_bottom = 109.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.756863, 0.156863, 0.156863, 1 )
+text = "Ballonvaart"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLabelNode" type="Node2D" parent="Labels"]
+position = Vector2( -760, 312 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="InstructionLabel" type="Label" parent="Labels/InstructionLabelNode"]
+margin_left = -4.37482
+margin_top = 17.8796
+margin_right = 711.625
+margin_bottom = 176.88
+custom_fonts/font = SubResource( 9 )
+text = "Houd de spatiebalk ingedrukt om op te stijgen!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearLabelNode" type="Node2D" parent="Labels"]
+position = Vector2( 736, -100 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ClearLabel" type="Label" parent="Labels/ClearLabelNode"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.156863, 0.196078, 0.756863, 1 )
+text = "Gefeliciteerd!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndingLabelNode" type="Node2D" parent="Labels"]
+position = Vector2( 1450, 176 )
+
+[node name="EndingLabel" type="Label" parent="Labels/EndingLabelNode"]
+margin_left = -56.0
+margin_right = 614.0
+margin_bottom = 361.0
+custom_fonts/font = SubResource( 4 )
+text = "Zo, genoeg geoefend. Tijd dat je dit eens in het echt gaat doen!
+...maar daarvoor moet je wel een kaartje hebben natuurlijk!
+
+Klik op onderstaande link om te kijken of Nik en Sophie je hierbij kunnen helpen!
+
+
+
+Groetjes van Luuk!"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EndingLabel2" type="Label" parent="Labels/EndingLabelNode"]
+margin_left = 129.986
+margin_top = 304.415
+margin_right = 146.986
+margin_bottom = 353.415
+rect_rotation = -40.1657
+custom_fonts/font = SubResource( 4 )
+text = "-"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LinkButton" type="LinkButton" parent="Labels/EndingLabelNode"]
+margin_left = 154.0
+margin_top = 413.0
+margin_right = 614.0
+margin_bottom = 462.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.0509804, 0.647059, 0.780392, 1 )
+text = "https://annie-66.eleven59.nl"
+underline = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="IntroTunePlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+
+[node name="GustAudioPlayer" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2( 96, 416 )
+stream = ExtResource( 15 )
+
+[node name="ClearAudioPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 17 )
+
+[node name="EndingMusicPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 18 )
+
+[node name="VolumeTween" type="Tween" parent="Audio"]
+
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="PlaneTimer" type="Timer" parent="Timers"]
+wait_time = 15.0
+
+[node name="BuildingTimer" type="Timer" parent="Timers"]
+wait_time = 8.0
+
+[node name="GustTimer" type="Timer" parent="Timers"]
+wait_time = 20.0
+
+[node name="GustStopTimer" type="Timer" parent="Timers"]
+wait_time = 20.0
+
+[node name="EndTimer" type="Timer" parent="Timers"]
+wait_time = 120.0
+one_shot = true
+[connection signal="crashed" from="Balloon" to="." method="_on_Balloon_crashed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="Labels/EndingLabelNode/LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="finished" from="Audio/ClearAudioPlayer" to="." method="_on_ClearAudioPlayer_finished"]
+[connection signal="timeout" from="Timers/PlaneTimer" to="." method="_on_PlaneTimer_timeout"]
+[connection signal="timeout" from="Timers/BuildingTimer" to="." method="_on_BuildingTimer_timeout"]
+[connection signal="timeout" from="Timers/GustTimer" to="." method="_on_GustTimer_timeout"]
+[connection signal="timeout" from="Timers/EndTimer" to="." method="_on_EndTimer_timeout"]

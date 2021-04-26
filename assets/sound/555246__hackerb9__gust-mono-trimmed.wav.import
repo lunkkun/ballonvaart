@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/555246__hackerb9__gust-mono-trimmed.wav-98674b5f3fb532ecbd3e71f8390fa8af.sample"
+
+[deps]
+
+source_file="res://assets/sound/555246__hackerb9__gust-mono-trimmed.wav"
+dest_files=[ "res://.import/555246__hackerb9__gust-mono-trimmed.wav-98674b5f3fb532ecbd3e71f8390fa8af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

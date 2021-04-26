@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1-19 Correct Solution.wav-5c282c51bdb41c35b21a2da7ed8ac5ab.sample"
+
+[deps]
+
+source_file="res://assets/sound/1-19 Correct Solution.wav"
+dest_files=[ "res://.import/1-19 Correct Solution.wav-5c282c51bdb41c35b21a2da7ed8ac5ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

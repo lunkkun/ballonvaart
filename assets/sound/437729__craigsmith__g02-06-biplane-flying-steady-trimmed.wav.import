@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/437729__craigsmith__g02-06-biplane-flying-steady-trimmed.wav-99777e79253b5b8a1dca1a740247b63d.sample"
+
+[deps]
+
+source_file="res://assets/sound/437729__craigsmith__g02-06-biplane-flying-steady-trimmed.wav"
+dest_files=[ "res://.import/437729__craigsmith__g02-06-biplane-flying-steady-trimmed.wav-99777e79253b5b8a1dca1a740247b63d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

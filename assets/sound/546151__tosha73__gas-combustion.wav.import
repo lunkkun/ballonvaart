@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/546151__tosha73__gas-combustion.wav-ba942bfbb062510610a9450d26f47b72.sample"
+
+[deps]
+
+source_file="res://assets/sound/546151__tosha73__gas-combustion.wav"
+dest_files=[ "res://.import/546151__tosha73__gas-combustion.wav-ba942bfbb062510610a9450d26f47b72.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
