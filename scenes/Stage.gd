@@ -11,17 +11,20 @@ var can_liftoff = false
 var taking_off = false
 var is_airborn = false
 var ready_to_land = false
+var is_landing = false
 
 onready var _balloon = $Balloon
 onready var _background = $Background
 onready var _plane_spawn_location = $PlanePath/PlaneSpawnLocation
 onready var _building_spawn_location = $BuildingPath/BuildingSpawnLocation
+onready var _progress = $ProgressPath/Progress
 
 onready var _plane_timer = $Timers/PlaneTimer
 onready var _building_timer = $Timers/BuildingTimer
 onready var _gust_timer = $Timers/GustTimer
 onready var _gust_stop_timer = $Timers/GustStopTimer
 onready var _end_timer = $Timers/EndTimer
+onready var _landing_timer = $Timers/LandingTimer
 
 onready var _animation_player = $AnimationPlayer
 onready var _landing_tween = $LandingTween
@@ -43,6 +46,9 @@ func _ready():
 func _process(_delta):
 	if can_liftoff and not is_airborn:
 		process_liftoff()
+	
+	if is_airborn and not is_landing:
+		process_progress()
 
 
 func process_liftoff():
@@ -58,6 +64,12 @@ func process_liftoff():
 		elif taking_off:
 			_animation_player.stop(false)
 		taking_off = false
+
+
+func process_progress():
+	var time_left =  _end_timer.time_left + (_landing_timer.wait_time if _landing_timer.is_stopped() else _landing_timer.time_left)
+	var total_time = _end_timer.wait_time + _landing_timer.wait_time
+	_progress.unit_offset = (total_time - time_left) / total_time
 
 
 func start_gameplay():
@@ -135,6 +147,8 @@ func _on_EndTimer_timeout():
 	ready_to_land = true
 	_balloon.wind_blowing = false
 	
+	_landing_timer.start()
+	
 	_building_spawn_location.offset = 0
 	
 	var flag = flag_packed.instance()
@@ -148,16 +162,19 @@ func _on_EndTimer_timeout():
 	
 	_music.stop()
 	_clear_audio.play()
-	
-	_volume_tween.interpolate_property(_clear_audio, "volume_db", null, 0, 4)
-	_volume_tween.start()
-	
-	yield(_volume_tween, "tween_all_completed")
-	
-	start_landing()
 
 
-func start_landing():
+func _on_ClearAudioPlayer_finished():
+	_ending_music.play()
+
+
+func _on_LinkButton_pressed():
+	OS.shell_open("https://annie-66.eleven59.nl/")
+
+
+func _on_LandingTimer_timeout():
+	is_landing = true
+	
 	_balloon.can_move = false
 	_balloon.can_burn = false
 	_background.stop_scrolling()
@@ -167,11 +184,3 @@ func start_landing():
 	_landing_tween.interpolate_property(_balloon, "position", null, Vector2(376, 768), 10)
 	_landing_tween.interpolate_property(_balloon, "scale", null, Vector2(1, 1), 9)
 	_landing_tween.start()
-
-
-func _on_ClearAudioPlayer_finished():
-	_ending_music.play()
-
-
-func _on_LinkButton_pressed():
-	OS.shell_open("https://annie-66.eleven59.nl/")
