@@ -169,8 +169,8 @@ func _on_ClearAudioPlayer_finished():
 
 
 func _on_LinkButton_pressed():
-	_clear_audio.stop()
-	_ending_music.stop()
+	_clear_audio.stream_paused = true
+	_ending_music.stream_paused = true
 	OS.shell_open("https://annie-66.eleven59.nl/")
 
 
